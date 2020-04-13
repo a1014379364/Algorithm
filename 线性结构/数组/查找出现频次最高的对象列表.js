@@ -38,3 +38,10 @@ const arr = [obj1,obj2,obj3,obj1,obj1,obj2,obj2,obj2,obj2]
 //只适合存在明确id的对象，若对象id为字符串，可以用类数组，原理一样
 
 //目前为止，只能用两层遍历解决问题
+
+//使用分治
+function find(arr){
+  //遍历arr数组
+    //
+
+}
