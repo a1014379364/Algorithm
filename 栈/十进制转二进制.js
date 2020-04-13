@@ -35,6 +35,7 @@ function Stack() {
     return this.items.toString()
   }
 }
+// import {Stack} from './Stack'
 
 function dec2bin(decNumber) {
   const stack = new Stack()

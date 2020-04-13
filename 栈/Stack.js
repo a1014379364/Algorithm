@@ -1,4 +1,4 @@
-function Stack() {
+export function Stack() {
   //栈中的属性
   this.items = []
 
