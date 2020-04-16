@@ -1,4 +1,4 @@
-export function Stack() {
+function Stack() {
   //栈中的属性
   this.items = []
 
@@ -35,3 +35,12 @@ export function Stack() {
     return this.items.toString()
   }
 }
+
+const stack = new Stack()
+stack.push(2)
+stack.push(0)
+stack.push(-3)
+// console.log(stack.getMin());
+console.log(stack.pop());
+console.log(stack.peek());
+// console.log(stack.getMin());

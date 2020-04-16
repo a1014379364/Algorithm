@@ -81,7 +81,7 @@ function LinkedList(){
   }
 
   LinkedList.prototype.get = function (position) {
-    if(position < 0 || position > this.length) return false
+    if(position < 0 || position >= this.length) return false
 
     let pointer = this.head
     let index = 0
@@ -92,7 +92,7 @@ function LinkedList(){
   }
 
   LinkedList.prototype.update = function (position,data) {
-    if(position < 0 || position > this.length) return false
+    if(position < 0 || position >= this.length) return false
 
     let pointer = this.head
     let index = 0
@@ -118,7 +118,7 @@ function LinkedList(){
   }
 
   LinkedList.prototype.removeAt = function (position) {
-    if(position < 0 || position > this.length) return false
+    if(position < 0 || position >= this.length) return false
 
     let node = null
     if(position === 0){
