@@ -1,9 +1,8 @@
-
 function HashTable() {
   //定义属性
   this.storage = []
   this.count = 0
-  this.limit = 8
+  this.limit = 8 //?
 
   //定义相关方法
   //哈希函数
@@ -13,10 +12,12 @@ function HashTable() {
 
     //2、霍纳算法，来计算hashCode的数值
     for(let i = 0;i < str.length; i++){
+      //charCodeAt() 方法可返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数。
+      //37是一个质数代表,使用它可以让hashCode均匀分布
       hashCode = 37 * hashCode + str.charCodeAt(i)
     }
 
-    //3、取模运算
+    //3、取模运算,为了压缩数字
     hashCode = hashCode % max
 
     return hashCode
@@ -25,7 +26,7 @@ function HashTable() {
   //插入数据的方法
   HashTable.prototype.put = function (key,value) {
     //1、获取key对应的index
-    let index = this.hashFunc(key,this.limit)
+    let index = this.hashFunc(key,this.limit)//获取存储下标
 
     //2、取出数组(也可以是链表)
     let bucket = this.storage[index]
@@ -115,4 +116,26 @@ function HashTable() {
   HashTable.prototype.size = function () {
     return this.count
   }
+
+  //判断某个数字是否为质数
+  HashTable.prototype.isPrime = function (num) {
+    const temp = parseInt(Math.sqrt(num))
+
+    for(let i = 0; i <= temp; i++){
+      if(num % i == 0){
+        return false
+      }
+    }
+
+    return false
+  }
+
+  // HashTable.prototype.getPrmie = function (num) {
+  //
+  // }
 }
+
+const hashTable = new HashTable()
+// console.log(hashTable.hashFunc('abc', 5));
+hashTable.put('abc',100)
+console.log(hashTable.get('abc'));
